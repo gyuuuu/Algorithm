@@ -11,12 +11,10 @@ int main() {
 	while(n1 <= n2){
 		cout << n1 << " ";
 		sum += n1;
-		if(n1 == n2){
+		if(n1 == n2)
 			cout << "= ";
-		}
-		else{
+		else
 			cout << "+";
-		}
 		n1++;
 	}
 	cout << sum;
