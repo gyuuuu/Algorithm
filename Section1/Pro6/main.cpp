@@ -1,32 +1,25 @@
 #include <iostream>
-#include <cctype>
 #include <stdio.h>
-#include <math.h>
 
 using namespace std;
 
 int main() {
+	//freopen("input.txt", "rt", stdin);
 	string input;
-	char num[1024];
-	int number;
+	int number = 0;
 	
-	cin >> input;
+	//cin >> input;
+	getline(cin, input);
 	
 	int numIndex = 0;
 	for(int i=0; i<input.length(); i++){
 		if( (input.at(i) >= 48 )&& (input.at(i) <= 57) ){
-			num[numIndex] = input.at(i);
-			numIndex++;
+			number = number*10 + (input.at(i)-48);
 		}
 	}
-	
-	int expo = numIndex -1;
-	for(int i=0; i<numIndex; i++){
-		number += (num[i]-48) * pow(10, expo);
-		expo--;
-	}
-	
-	cout << number << endl;
+
+	//cout << number << endl;
+	printf("%d\n", number);
 	
 	int count = 2;
 	for(int i=2; i<number; i++){
@@ -34,7 +27,8 @@ int main() {
 			count++;
 	}
 	
-	cout << count;
+	//cout << count;
+	printf("%d", count);
 	
 	return 0;
 }
