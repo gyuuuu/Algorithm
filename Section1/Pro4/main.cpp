@@ -4,6 +4,7 @@ using namespace std;
 
 int main() {
 	freopen("input.txt", "rt", stdin);
+	
 	int n, age;
 	int max = 0;
 	int min = 100;
