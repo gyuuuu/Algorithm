@@ -17,8 +17,24 @@ int main() {
 	for(int i=0; i<num; i++)
 		digitSum[i] = digit_sum(arr[i]);
 		
-	for(int i=0; i<num; i++)
-		cout << digitSum[i] << " ";
+	int max = 0;
+	int maxIndex = 0;
+	for(int i=0; i<num; i++){
+		if(digitSum[i] > max){
+			max = digitSum[i];
+			maxIndex = i;
+		}
+	}
+	
+	for(int i=maxIndex+1; i<num; i++){
+		if(max == digitSum[i]){
+			if(arr[maxIndex] < arr[i]){
+				maxIndex = i;
+			}
+		}
+	}
+	
+	cout << arr[maxIndex];
 	
 	return 0;
 }
