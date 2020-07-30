@@ -6,35 +6,55 @@ using namespace std;
 int digit_sum(int x);
 
 int main() {
-	int num;
-	int arr[100];
-	int digitSum[100];
-	scanf("%d", &num);
 	
-	for(int i=0; i<num; i++)
-		scanf("%d", &arr[i]);
-		
-	for(int i=0; i<num; i++)
-		digitSum[i] = digit_sum(arr[i]);
-		
+	int n, num, sum, result;
 	int max = 0;
-	int maxIndex = 0;
-	for(int i=0; i<num; i++){
-		if(digitSum[i] > max){
-			max = digitSum[i];
-			maxIndex = i;
+	scanf("%d", &n);
+	
+	for(int i=0; i<n; i++){
+		scanf("%d", &num);
+		sum = digit_sum(num);
+		if(max < sum){
+			max = sum;
+			result = num;
+		}
+		else if(max == sum){
+			if(result < num)
+				result = num;
 		}
 	}
 	
-	for(int i=maxIndex+1; i<num; i++){
-		if(max == digitSum[i]){
-			if(arr[maxIndex] < arr[i]){
-				maxIndex = i;
-			}
-		}
-	}
+	printf("%d", result);
 	
-	cout << arr[maxIndex];
+//	int num;
+//	int arr[100];
+//	int digitSum[100];
+//	scanf("%d", &num);
+//	
+//	for(int i=0; i<num; i++)
+//		scanf("%d", &arr[i]);
+//		
+//	for(int i=0; i<num; i++)
+//		digitSum[i] = digit_sum(arr[i]);
+//		
+//	int max = 0;
+//	int maxIndex = 0;
+//	for(int i=0; i<num; i++){
+//		if(digitSum[i] > max){
+//			max = digitSum[i];
+//			maxIndex = i;
+//		}
+//	}
+//	
+//	for(int i=maxIndex+1; i<num; i++){
+//		if(max == digitSum[i]){
+//			if(arr[maxIndex] < arr[i]){
+//				maxIndex = i;
+//			}
+//		}
+//	}
+//	
+//	cout << arr[maxIndex];
 	
 	return 0;
 }
