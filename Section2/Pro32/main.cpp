@@ -7,7 +7,7 @@ using namespace std;
 void swap(int & x, int & y);
 
 int main() {
-	//freopen("input.txt", "rt", stdin);
+	freopen("input.txt", "rt", stdin);
 	int n;
 	cin >> n;
 	
@@ -16,10 +16,9 @@ int main() {
 		scanf("%d", &arr[i]);
 	
 	for(int i=0; i<n-1; i++){
-		int min = arr[i];
 		int min_index = i;
 		for(int j=i+1; j<n; j++){
-			if(min > arr[j])
+			if(arr[min_index] > arr[j])
 				min_index = j;
 		}
 		swap(arr[i], arr[min_index]);
