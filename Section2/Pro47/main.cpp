@@ -8,9 +8,10 @@ int main() {
 	//freopen("input.txt", "rt", stdin);
 	int n;
 	cin >> n;
-	int** arr = new int*[n];
+	//int** arr = new int*[n];
+	vector<vector<int> > arr(n, vector<int>(n));
 	for(int i=0; i<n; i++){
-		arr[i] = new int[n];
+		//arr[i] = new int[n];
 		for(int j=0; j<n; j++){
 			scanf("%d", &arr[i][j]);
 		}
