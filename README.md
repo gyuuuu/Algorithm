@@ -1,3 +1,3 @@
-# Algorithm_cpp
+# Algorithm
 
-아자아자 화이팅
+BOJ
