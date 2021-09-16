@@ -13,11 +13,8 @@ def compression(x, arr):
 
 n = int(sys.stdin.readline().rstrip())
 X = list(map(int, sys.stdin.readline().rstrip().split()))
+# Dict = { x: i for i, x in enumerate(sorted(set(X))) }
 X_s = sorted(set(X))
 
-answer = []
 for x in X:
-  answer.append(compression(x, X_s))
-
-for a in answer:
-  print(a, end=' ')
+  print(compression(x, X_s), end=' ')
